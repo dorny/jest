@@ -122,7 +122,7 @@ jobs:
       - name: run tests
         run: yarn test-ci-partial:parallel --max-workers ${{ steps.cpu-cores.outputs.count }}
       - name: Create reports
-        uses: dorny/test-reporter@improve-readme
+        uses: dorny/test-reporter@improvements-and-fixes
         with:
           name: JEST Tests ${{ matrix.node-version }}
           path: reports/junit/js-test-results.xml
