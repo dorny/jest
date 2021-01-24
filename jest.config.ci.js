@@ -14,12 +14,12 @@ module.exports = {
     [
       'jest-junit',
       {
+        classNameTemplate: "{classname}",
         outputDirectory: 'reports/junit',
         outputName: 'js-test-results.xml',
-        uniqueOutputName: false,
         suiteNameTemplate: "{filepath}",
-        classNameTemplate: "{classname}",
         titleTemplate: "{title}"
+        uniqueOutputName: false
       },
     ],
     [
