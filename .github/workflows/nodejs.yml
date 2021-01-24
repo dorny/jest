@@ -125,7 +125,7 @@ jobs:
         uses: dorny/test-reporter@improve-readme
         with:
           name: JEST Tests ${{ matrix.node-version }}
-          path: reports/js-test-results.xml
+          path: reports/junit/js-test-results.xml
           reporter: 'jest-junit'
 
   test-jasmine:
