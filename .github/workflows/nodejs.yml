@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - '**'
   pull_request:
     branches:
       - '**'
@@ -120,6 +121,12 @@ jobs:
         uses: SimenB/github-actions-cpu-cores@v1
       - name: run tests
         run: yarn test-ci-partial:parallel --max-workers ${{ steps.cpu-cores.outputs.count }}
+      - name: Create reports
+        uses: dorny/test-reporter@improve-readme
+        with:
+          name: JEST Tests ${{ matrix.node-version }}
+          path: reports/js-test-results.xml
+          reporter: 'jest-junit'
 
   test-jasmine:
     name: Node LTS on ${{ matrix.os }} using jest-jasmine2
