@@ -18,8 +18,8 @@ module.exports = {
         outputDirectory: 'reports/junit',
         outputName: 'js-test-results.xml',
         suiteNameTemplate: '{filepath}',
-        titleTemplate: "{title}",
-        uniqueOutputName: false
+        titleTemplate: '{title}',
+        uniqueOutputName: false,
       },
     ],
     [
