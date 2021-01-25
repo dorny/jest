@@ -125,7 +125,7 @@ jobs:
         uses: dorny/test-reporter@improvements-and-fixes
         if: always()
         with:
-          name: JEST Tests ${{ matrix.node-version }}
+          name: JEST Tests v${{ matrix.node-version }} on ${{ matirx.os }}
           path: reports/junit/js-test-results.xml
           reporter: jest-junit
           list-tests: only-failed
