@@ -126,7 +126,8 @@ jobs:
         with:
           name: JEST Tests ${{ matrix.node-version }}
           path: reports/junit/js-test-results.xml
-          reporter: 'jest-junit'
+          reporter: jest-junit
+          list-tests: only-failed
 
   test-jasmine:
     name: Node LTS on ${{ matrix.os }} using jest-jasmine2
