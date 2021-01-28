@@ -123,9 +123,9 @@ jobs:
         run: yarn test-ci-partial:parallel --max-workers ${{ steps.cpu-cores.outputs.count }}
       - name: Create reports
         uses: dorny/test-reporter@improvements-and-fixes
-        if: always()
+        if: failure()
         with:
-          name: JEST Tests v${{ matrix.node-version }} on ${{ matrix.os }}
+          name: Tests v${{ matrix.node-version }} on ${{ matrix.os }}
           path: reports/junit/js-test-results.xml
           reporter: jest-junit
           list-tests: only-failed
