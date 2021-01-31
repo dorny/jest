@@ -123,7 +123,7 @@ jobs:
         run: yarn test-ci-partial:parallel --max-workers ${{ steps.cpu-cores.outputs.count }}
       - name: Create reports
         uses: dorny/test-reporter@annotation-test
-        if: failure()
+        if: ${{ always() }}
         with:
           name: Tests v${{ matrix.node-version }} on ${{ matrix.os }}
           path: reports/junit/js-test-results.xml
