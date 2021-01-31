@@ -122,7 +122,7 @@ jobs:
       - name: run tests
         run: yarn test-ci-partial:parallel --max-workers ${{ steps.cpu-cores.outputs.count }}
       - name: Create reports
-        uses: dorny/test-reporter@improvements-and-fixes
+        uses: dorny/test-reporter@annotation-test
         if: failure()
         with:
           name: Tests v${{ matrix.node-version }} on ${{ matrix.os }}
